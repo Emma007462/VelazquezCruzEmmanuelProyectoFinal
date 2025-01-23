@@ -1,0 +1,124 @@
+/* Fondo animado */
+#contenedorImagenes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* Las imágenes del fondo */
+.imagen {
+    position: absolute; /* Superponer todas las imágenes */
+    top: 0;
+    left: 0;
+    width: 100%; /* Cubrir toda la pantalla */
+    height: 100%;
+    object-fit: cover; /* Ajustar la imagen sin deformarla */
+    opacity: 0; /* Ocultar por defecto */
+    transition: opacity 2s ease-in-out; /* Suavizar la transición */
+    z-index: -1;
+}
+
+/* La imagen visible */
+.imagen.visible {
+    opacity: 1; /* Mostrar la imagen activa */
+}
+
+
+/* Contenedor principal y formularios compartidos */
+.shared-container {
+    font-family: 'Poppins', Arial, sans-serif;
+    position: relative;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 3% auto;
+}
+.parrafoPrincipal {
+    font-size: 13px;
+    font-family: monospace;
+}
+
+/* Estilo exclusivo del formulario */
+.formulario {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 400px;
+    text-align: left; /* Ajusta el texto para mejor visualización */
+}
+
+/* Etiquetas y campos de formulario */
+.formulario label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+    color: #333;
+}
+
+.formulario input {
+    width: 96%;
+    padding: 6px;
+    font-size: 0.9rem;
+    margin: 8px 0;
+    border: 1px solid #232323;
+    border-radius: 4px;
+}
+
+/* Botones */
+.formulario button {
+    display: block;
+    width: 25%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Poppins', Arial, sans-serif;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 20px auto 0; /* Centrado horizontal y separación superior */
+}
+#btnIniciarSesion, #btnRegistrarse, #btnEliminarUsuario {
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+.formulario button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Clase para ocultar formularios */
+.oculto {
+    display: none;
+}
+
+#usuariosAeliminar {
+    width: 100%; /* Ancho del select */
+    padding: 10px; /* Espaciado interno */
+    margin-top: 10px;
+    border: 1px solid #232323; /* Borde del select */
+    border-radius: 5px; /* Esquinas redondeadas */
+    background-color: #f9f9f9; /* Color de fondo */
+    font-size: 12px; /* Tamaño de fuente */
+    color: #333; /* Color de texto */
+}
+
+
+#usuarioOpcions {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #232323; /* Borde del select */
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diario de Fotografía</title>
+    <link rel="stylesheet" href="css/indexEstilos.css">
+</head>
+<body>
+<div class="background"></div>
+
+<!--Contenedor de imagenes para la animacion de fondo-->
+<div id="contenedorImagenes">
+    <img src="/img/img1.jpg" alt="Imagen 1" class="imagen">
+    <img src="/img/img2.jpg" alt="Imagen 2" class="imagen">
+    <img src="/img/img3.jpg" alt="Imagen 3" class="imagen">
+    <img src="/img/img4.jpg" alt="Imagen 4" class="imagen">
+    <img src="/img/img5.jpg" alt="Imagen 5" class="imagen">
+    <img src="/img/img6.jpg" alt="Imagen 6" class="imagen">
+    <img src="/img/img7.jpg" alt="Imagen 7" class="imagen">
+    <img src="/img/img8.jpg" alt="Imagen 8" class="imagen">
+</div>
+
+<!-- Contenedor Principal -->
+<div class="container shared-container">
+    <header>
+        <h1>PhotograD</h1>
+        <h2>Bienvenido a tu diario de fotografía</h2>
+        <p class="parrafoPrincipal">
+            En este diario puedes registrar tus avances de fotografía para ir perfeccionando tus habilidades día con día.
+        </p>
+    </header>
+    <div class="buttons">
+        <button id="btnIniciarSesion">Iniciar Sesión</button>
+        <button id="btnRegistrarse">Registrarse</button>
+        <button id="btnEliminarUsuario">Eliminar Usuario</button>
+        <select id="usuariosAeliminar" style="display: none;"></select>
+    </div>
+</div>
+
+<!-- Contenedor para Iniciar Sesión -->
+<div id="iniciarSesionForm" class="formulario shared-container oculto">
+    <h2>Iniciar Sesión</h2>
+    <label for="correoSesion">Correo Electrónico:</label>
+    <input type="email" id="correoSesion" placeholder="Si no ves tu gmail en los usuarios ya registrados, ¡regístrate!">
+    <select id="usuarioOpcions">
+        <option value="">Usuarios ya registrados</option>
+    </select>
+    <br><br>
+    <label for="contrasenaSesion">Contraseña:</label>
+    <input type="password" id="contrasenaSesion">
+    <button id="btnEnviarSesion">Enviar</button>
+</div>
+
+<!-- Contenedor para Registro -->
+<div id="registrarseForm" class="formulario shared-container oculto">
+    <h2>Registrarse</h2>
+    <label for="nombre">Nombre(s):</label>
+    <input type="text" id="nombre" placeholder="Ejemplo: Juan">
+    <label for="apellido">Apellido(s):</label>
+    <input type="text" id="apellido" placeholder="Ejemplo: Pérez">
+    <label for="email">Correo Electrónico:</label>
+    <input type="email" id="email" placeholder="Ejemplo: correo@ejemplo.com">
+    <label for="contrasena">Contraseña:</label>
+    <input type="password" id="contrasena">
+    <button id="btnEnviarRegistro">Registrarse</button>
+</div>
+
+
+<script type="module" src="js/indexJS.js"></script>
+</body>
+</html>

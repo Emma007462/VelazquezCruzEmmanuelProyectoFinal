@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+    <link rel="stylesheet" href="/css/index2Estilos.css">
+</head>
+<body>
+
+<header>PhotoGraD</header>
+
+<div class="navbar">
+    <button id="btnAgregarFoto">Agregar Fotografía</button>
+    <button id="btnVerFotos">Ver mis fotos</button>
+    <button id="btnEditarPerfil">Editar perfil</button>
+    <button id="btnCerrarSesion">Cerrar Sesión</button>
+</div>
+
+<div class="content" id ="contenedorFormAfot">
+    <form class="upload-form" id="formSubirImagen">
+        <h2>Sube tu fotografía</h2>
+        <label for="archivoImagen" class="custom-file-upload">Seleccionar archivo</label>
+        <input type="file" id="archivoImagen" accept="image/*" />
+        <p class="file-name" id="nombreArchivo">Sin archivos seleccionados</p>
+        <button type="submit">Subir</button>
+    </form>
+</div>
+
+<div class="content">
+    <form id="formActualizarDatos">
+
+    </form>
+</div>
+
+<!-- Formulario para editar perfil (oculto inicialmente) -->
+<div class="content" id="contenedorEditarPerfil" style="display:none;">
+    <form id="formEditarPerfil">
+        <h2>Editar Perfil</h2>
+
+        <label for="nombreUsuario">Nombre:</label>
+        <input type="text" id="nombreUsuario" name="nombreUsuario" required />
+
+        <label for="apellidoUsuario">Apellido:</label>
+        <input type="text" id="apellidoUsuario" name="apellidoUsuario" required />
+
+        <label for="emailUsuario">Correo Electrónico:</label>
+        <input type="email" id="emailUsuario" name="emailUsuario" required />
+
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" required />
+    </form>
+    <button type="submit" id="btnGuardarC">Guardar Cambios</button>
+</div>
+
+
+
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<script type="module" src="/js/index2JS.js"></script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,290 @@
+/* General */
+body {
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #191919; /* Fondo oscuro Lightroom */
+    color: #dcdcdc; /* Texto claro */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: #202020; /* Fondo del encabezado */
+    color: #e7e7e7; /* Texto claro */
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    border-bottom: 1px solid #333; /* Línea sutil */
+}
+
+/* Barra de navegación */
+.navbar {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #242424; /* Fondo ligeramente más claro que el header */
+    border-bottom: 1px solid #333; /* Línea sutil */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    padding: 15px 0;
+}
+
+.navbar button {
+    background-color: rgba(51, 51, 51, 0.7); /* Fondo medio transparente */
+    color: #b0b0b0; /* Texto gris claro */
+    border: none;
+    padding: 8px 15px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 20px; /* Bordes redondeados para un efecto flotante */
+    font-size: 12px;
+    font-weight: 600;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Sombra flotante */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar button:hover {
+    background-color: rgba(0, 119, 255, 0.8); /* Azul Lightroom con opacidad */
+    color: #fff; /* Texto blanco */
+    transform: translateY(-3px); /* Efecto flotante al pasar el cursor */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.7); /* Incrementar sombra */
+}
+
+/* Contenido */
+.content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Formulario */
+.upload-form {
+    background-color: #202020; /* Fondo del formulario */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-form h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #1f88ff; /* Azul Lightroom */
+}
+
+.upload-form input[type="file"] {
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 12px;
+    background-color: #191919; /* Fondo oscuro */
+    color: #dcdcdc; /* Texto claro */
+}
+
+.upload-form button[type="submit"] {
+    background-color: rgba(0, 119, 255, 0.8); /* Azul Lightroom con transparencia */
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px; /* Botón flotante */
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Sombra flotante */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.upload-form button[type="submit"]:hover {
+    background-color: rgba(0, 102, 204, 0.9); /* Azul más oscuro con opacidad */
+    transform: translateY(-3px); /* Efecto flotante al pasar el cursor */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.7); /* Incrementar sombra */
+}
+
+.upload-form input[type="file"] {
+    display: none; /* Oculta el input original */
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #ddd;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid #444;
+    border-radius: 25px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.custom-file-upload:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05); /* Efecto flotante */
+}
+
+.file-name {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #aaa;
+    text-align: center;
+}
+
+.cursor-glow {
+    position: absolute;
+    width: 100px; /* Tamaño del destello */
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 128, 255, 0.4), rgba(0, 128, 255, 0));
+    pointer-events: none;
+    mix-blend-mode: screen;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    animation: glowPulse 1.5s infinite;
+    z-index: 9999;
+    filter: blur(15px); /* Difumina el destello */
+}
+
+
+@keyframes glowPulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+}
+
+
+/* Estilo general inspirado en Lightroom */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1e1e1e; /* Fondo oscuro */
+    color: #d3d3d3; /* Texto gris claro */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Altura completa de la ventana */
+}
+
+/* Contenedor principal */
+#contenedorEditarPerfil {
+    background-color: #292929; /* Gris oscuro */
+    border-radius: 12px;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px; /* Tamaño máximo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra suave */
+}
+
+/* Encabezado del formulario */
+#formEditarPerfil h2 {
+    color: #85b9ff; /* Azul apagado */
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #3a3a3a; /* Línea divisoria */
+    padding-bottom: 10px;
+}
+
+/* Etiquetas */
+#formEditarPerfil label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #d3d3d3; /* Gris claro */
+}
+
+/* Campos de entrada */
+#formEditarPerfil input {
+    width: 94%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #555; /* Borde oscuro */
+    border-radius: 8px;
+    background-color: #3a3a3a; /* Fondo más oscuro */
+    color: #d3d3d3; /* Texto claro */
+    font-size: 0.9rem;
+    transition: border-color 0.3s ease;
+}
+
+#formEditarPerfil input:focus {
+    border-color: #6495ed; /* Azul claro en foco */
+    outline: none;
+}
+
+/* Botón */
+#btnGuardarC {
+    display: block; /* Permite el centrado */
+    width: 60%; /* Tamaño adaptable */
+    margin: 20px auto 0; /* Centrado horizontal y separación superior */
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #6495ed; /* Azul claro */
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
+
+#btnGuardarC:hover {
+    background-color: #4169e1; /* Azul más intenso */
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+}
+
+
+
+
+/* Contenedor de imágenes */
+#contenedorFotos {
+    display: grid; /* Distribución en forma de cuadrícula */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajuste automático */
+    gap: 20px; /* Espacio entre las imágenes */
+    padding: 20px;
+    background-color: #1e1e1e; /* Fondo oscuro */
+    border-top: 2px solid #333; /* Separación con un borde */
+    color: #d3d3d3; /* Texto claro (si se necesitan captions) */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* Centrado horizontal */
+}
+
+/* Imágenes */
+#contenedorFotos img {
+    width: 100%; /* Asegura que las imágenes se ajusten al espacio */
+    height: auto;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Sombra elegante */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contenedorFotos img:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8); /* Sombra más intensa */
+}
+
+/* Botón activo (opcional para resaltar que se están viendo las fotos) */
+#btnVerFotos.active {
+    background-color: #6495ed; /* Azul claro */
+    color: #fff;
+}
+
