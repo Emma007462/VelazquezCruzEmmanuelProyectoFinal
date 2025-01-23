@@ -148,7 +148,7 @@ btnEnviarSesion.addEventListener("click", async () => {
             localStorage.setItem("usuarioEmail", usuarioEncontrado.email);
 
             // Redirigir a la nueva página
-            window.location.href = "index2_inicio.html";
+            window.location.href = "index2inicio.html";
         } else {
             alert("Contraseña incorrecta. Intenta de nuevo.");
         }
